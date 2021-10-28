@@ -134,6 +134,8 @@ you see yours, use `sudo puppetserver ca sign --certname hostname.ocf.berkeley.e
 Log back into the host and run `puppet agent --test` to start the Puppet
 run. You may need to repeat this once or twice until the run converges.
 
+If you see a private key mismatch, run `sudo puppetserver ca clean --certname hostname.ocf.berkeley.edu`, then run `puppet agent --test` and run `sudo puppetserver ca sign --certname hostname.ocf.berkeley.edu` again. Running `puppet agent --test` once more should then start the Puppet run.
+
 
 ### Step 4.1. Upgrade packages
 
